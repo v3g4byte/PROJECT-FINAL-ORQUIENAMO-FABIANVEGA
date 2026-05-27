@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+
+<html lang="es">
+<!--Documentación-->
+<!--Nombre: Fabián Alejandro Vega Irizarry-->
+<!--Número de estudiante: 802-22-4327-->
+<!--Fecha: 26 de mayo de 2026-->
+<!--Descripción: Proyecto Final-->
+
+<head>
+  <meta charset="UTF-8" >
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" >
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/styles.css">
+  <title>Orquídea Enamorada - Orden Personalizada</title>
+</head>
+
+<!--Parte para llevar a cabo el formulario en el website (pedido de joya). Tiene un desgloze del proceso que se va a 
+realizar luego de llenar el formulario, aclaraciones, etc... Abajo explico el form. -->
+
+<body>
+  <header>
+    <img src="img/logo.webp" alt="Logo">
+    <h1>Orquídea Enamorada</h1>
+    <h2 class="smaller">Joyería hecha a mano con amor y dedicación</h2>
+  </header>
+
+  <nav>
+    <a href="index.html">Inicio</a> |
+    <a href="tienda.html">Tienda</a> |
+    <strong>ORDEN PERSONALIZADA</strong>&nbsp;|&nbsp;
+    <a href="contact.html">Contactos</a>
+  </nav>
+
+  <main>
+    <h2 class="ord">Órdenes Personalizadas (<em>Custom Orders</em>)</h2>
+    <h3 class="small-ord">¿Tienes en mente una joya única? ¡Hacemos realidad tu visión!</h3>
+
+    <hr>
+
+    <section>
+      <h3>¿Cómo funciona el proceso de una orden personalizada?</h3>
+      <ol>
+        <li><strong>Envías tu solicitud</strong> - Completa el formulario a continuación con los detalles de tu idea.
+        </li>
+        <li><strong>Nos comunicamos</strong> - En un plazo de 1 a 3 días hábiles te contactamos para confirmar
+          detalles, materiales y precio.</li>
+        <li>Realizamos la aprobación/cambios del diseño y el presupuesto.</li>
+        <li>Realizas el pago.</li>
+        <li><strong>Elaboramos tu joya</strong> - El tiempo de producción varía entre 7 y 21 días según la complejidad.
+        </li>
+        <li><strong>Envío o recogido</strong> - Una vez lista, se coordina la entrega.
+        </li>
+      </ol>
+
+      <h3><strong>IMPORTANTE:</strong></h3>
+      <ul>
+        <li>Las órdenes personalizadas tienen un costo adicional según la complejidad del diseño.</li>
+        <li>No se aceptan devoluciones en piezas personalizadas una vez aprobado el diseño.</li>
+      </ul>
+    </section>
+
+    <hr>
+
+    <!--Este es el fromulario para llenar la solicitud de la joya. No envía info a ningun servidor 
+    por lo que en action coloqué un #, -->
+
+    <!--Utilicé fieldset para organizar los labels con su 'field' correspondiente en cajas dependiendo del contenido 
+    que están pideindo-->
+
+    <!--En label uso 'for' para poder conectarlo con 'id' en input y esto logra que si presionas en las palabras también
+    activa el campo para que puedas escribir info. Placeholder es las palabras 'faded' que aparecen en los campos cuando 
+    no has escrito nada. El 'required' Es para que cuando presionas para enviarlo (aunque no está en full función) chequee que
+    hayas escrito en todos las partes del formulario con *.-->
+
+    <!--type 'submit' sesupone que ejcute funciones con el action y con los valores "name" que omití en los inputs.
+    type reset limpia el formulario de toda info. accept="image/*" significa cualquier tipo de formato de imagen -->
+
+    <section>
+      <h3>Formulario de Solicitud</h3>
+      <p><em>Todos los campos marcados con (*) son requeridos.</em></p>
+
+      <form action="#" method="post">
+
+        <fieldset>
+          <legend>Información Personal</legend>
+
+          <p>
+            <label for="nombre">Nombre Completo *</label>
+            <input type="text" id="nombre" placeholder="Tu Nombre Completo" required >
+          </p>
+
+          <p>
+            <label for="email">Correo Electrónico *</label>
+            <input type="email" id="email" placeholder="tucorreo@gmail.com" required >
+          </p>
+
+          <p>
+            <label for="telefono">Número de Teléfono *</label>
+            <input type="tel" id="telefono" placeholder="+1 (000) 000-0000" required >
+          </p>
+
+          <p>
+            <label for="pais">País / Región *</label>
+            <input type="text" id="pais" placeholder="Ej: Puerto Rico, Estados Unidos" required >
+          </p>
+        </fieldset>
+
+        <fieldset>
+          <legend>Detalles de la Joya</legend>
+
+          <p>
+            <label for="materiales">Materiales Preferidos</label>
+            <input type="text" id="materiales" placeholder="Ej: metal, conchas, esmalte azul..." >
+          </p>
+
+          <p>
+            <label for="med">Medidas</label>
+            <input type="text" id="med" placeholder="Ej: collar 18 cm" >
+          </p>
+
+          <p>
+            <label for="descripcion">Descripción *</label>
+            <textarea id="descripcion" rows="6" cols="50"
+              placeholder="Describe con detalle el diseño que tienes en mente: forma, colores, piedras, estilo, ocasión especial, etc."
+              required></textarea>
+          </p>
+
+          <p>
+            <label for="referencia">Referencia Visual</label>
+            <input type="file" id="referencia" accept="image/*" >
+          </p>
+        </fieldset>
+
+        <fieldset>
+          <legend>Presupuesto y Entrega</legend>
+
+          <p>
+            <label for="presupuesto">Presupuesto Aproximado (USD)</label>
+            <select id="presupuesto">
+              <option>-Elige Una Opción-</option>
+              <option>Menos de $30</option>
+              <option>$30 - $60</option>
+              <option>$60 - $100</option>
+              <option>Más de $100</option>
+              <option>No estoy seguro/a</option>
+            </select>
+          </p>
+
+          <p>
+            <label for="fecha">¿Fecha Límite?</label>
+            <input type="date" id="fecha" >
+          </p>
+
+          <p>
+            <label for="ocasion">Ocasión Especial</label>
+            <input type="text" id="ocasion" placeholder="Ej: cumpleaños, aniversario, regalo de bodas..." >
+          </p>
+        </fieldset>
+
+        <fieldset>
+          <legend>Consentimiento</legend>
+          <p>
+            <label for="terminos">
+              <input type="checkbox" id="terminos" required >
+              Entiendo que las órdenes personalizadas no son reembolsables una vez aprobado el diseño. *
+            </label>
+          </p>
+
+          <p>
+            <label for="contacto">
+              <input type="checkbox" id="contacto" >
+              Deseo recibir información sobre nuevas colecciones y promociones de Orquídea Enamorada.
+            </label>
+          </p>
+        </fieldset>
+
+        <p>
+          <input type="submit" value="Enviar Solicitud" >
+          <input type="reset" value="Limpiar Formulario" >
+        </p>
+
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Orquídea Enamorada. Todos los derechos reservados.</p>
+  </footer>
+
+  <script src="js/orquidea.js"></script>
+</body>
+</html>

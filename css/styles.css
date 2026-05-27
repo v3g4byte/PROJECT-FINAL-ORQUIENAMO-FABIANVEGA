@@ -1,0 +1,659 @@
+/* Orquidea Enamorada: styles.css
+Nombre: Fabián Alejandro Vega Irizarry
+Número de estudiante: 802-22-4327
+Fecha: 26 de mayo de 2026
+Descripción: Avance Proyecto Final
+ */
+
+/*Esto fue para poder lograr los 'strips' de imagen que van de arriba hacia abajo en todo el website. Aunque el valor 
+ content este vacio los strips no aparecen si el valor no está puesto. Fixed hace que la imagen esté estática cuando escroleas.
+ top y bottom 0 para que vaya desde donde empieza la página hasta donde termina. Repeat-y para que de aparriencia de patrón.
+ Contain hace que la imagen entera se visualice sin cortar sus partes.*/
+
+/*STRIPS*/
+body::before,
+body::after {
+  content: '';
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: 6.25rem;
+  background-image: url('../img/flower_pattern.webp');
+  background-repeat: repeat-y;
+  background-size: contain;
+}
+
+/*strip izquierdo*/
+body::before {
+  left: 0;
+}
+
+/*strip derecho*/
+body::after {
+  right: 0;
+}
+
+/*BODY*/
+
+/*Font leible, texto no muy grueso, suficiente espacio entre elementos*/
+body {
+  font-family: Georgia, serif;
+  font-weight: 300;
+  line-height: 1.8;
+  color: #4a2c35;
+  background-color: #fff8f9;
+  max-width: 53.75rem;
+  margin: 0 auto;
+  /*centra contenido horizontalmente*/
+  padding: 0 2rem;
+}
+
+/*HEADINGS*/
+h1,
+h2,
+h3,
+h4 {
+  color: #7b2d42;
+}
+
+h1 {
+  font-size: 2.81rem;
+  font-style: italic;
+  margin-bottom: 0;
+}
+
+h2 {
+  font-size: 1.88rem;
+  margin-bottom: 0.75rem;
+}
+
+h3 {
+  font-size: 1.38rem;
+  margin-bottom: 0.5rem;
+  margin-top: 0.25rem;
+  font-style: italic;
+}
+
+h4 {
+  font-size: 1.09rem;
+  margin-bottom: 0.375rem;
+}
+
+/*LINKS*/
+
+a {
+  color: #b05070;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+  color: #7b2d42;
+}
+
+
+/*HEADER*/
+
+header {
+  text-align: center;
+  padding: 3rem 0 1.5rem;
+  /*orden: top, left/right, bottom*/
+  border-bottom: 2px solid #b05070;
+  /*linea arriba de nav solida*/
+  margin-bottom: 0;
+}
+
+header img {
+  /*moví el styling de el logo hacia aquí en el CSS para que no esté in-line*/
+  width: 8rem;
+  margin-bottom: -3rem;
+  border: 1px solid #7b2d42;
+  /*se vea más pronunciado*/
+}
+
+nav {
+  text-align: center;
+  padding: 1rem 0;
+  /*sin padding a los lados*/
+  border-bottom: 2px solid #b05070;
+  margin-bottom: 1.75rem;
+}
+
+nav a {
+  font-size: 0.84rem;
+  letter-spacing: 0.125rem;
+  text-transform: uppercase;
+  color: #b05070;
+  margin: 0 1rem;
+  text-decoration: none;
+}
+
+nav a:hover {
+  color: #7b2d42;
+  text-decoration: none;
+  border-bottom: 1px solid #b05070;
+}
+
+/*hr me divide secciones cuando lo necesito*/
+hr {
+  border: none;
+  border-top: 1px solid #f0c8d0;
+  margin: 2.5rem 0;
+}
+
+ul {
+  padding-left: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+ul li {
+  margin-bottom: 0.28rem;
+}
+
+ol {
+  padding-left: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+ol li {
+  margin-bottom: 0.5rem;
+}
+
+
+article {
+  background-color: #fff0f3;
+  border: 1px solid #f0c8d0;
+  border-radius: 0.625rem;
+  padding: 1.75rem;
+  margin-bottom: 1.75rem;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+article:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 28px #702d4226;
+}
+
+/*CSS con CLASSES*/
+section.box {
+  background-color: #fff0f3;
+  border: 1px solid #f0c8d0;
+  border-radius: 3.13rem;
+  padding: 1.75rem;
+  margin-bottom: 1.75rem;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+section.box:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 28px #702d4226;
+}
+
+section.coleccion {
+  text-align: center;
+}
+
+section.coleccion img {
+  width: 50%;
+  border-radius: 0.625rem;
+  border: 1px solid #f0c8d0;
+}
+
+.redes_layout {
+  display: flex;
+  /* para acomodar la imagen al lado izquierdo de los contactos*/
+  align-items: center;
+  gap: 12.19rem;
+}
+
+.redes_layout img {
+  width: 30%;
+  border-radius: 0.625rem;
+}
+
+h2.contacto {
+  margin-bottom: 0;
+}
+
+h3.prod_titl {
+  text-align: center;
+  font-style: normal;
+}
+
+img.prod_titl {
+  display: block;
+  /*uso para poder usar la propiedad margin que me permite centrar la imagen*/
+  margin: 0 auto;
+  width: 40%;
+  border-radius: 0.938rem;
+  border: 1px solid #f0c8d0;
+}
+
+section.tienda {
+  padding: 1.5rem;
+  background-color: #b05070;
+  border-radius: 0.625rem;
+}
+
+.info {
+  color: #f3dcbe;
+}
+
+ul.info {
+  list-style: none;
+}
+
+h2.ord {
+  text-align: center;
+}
+
+h2.smaller {
+  font-size: 1.38rem;
+  /*por problema de verificación html*/
+  font-style: italic;
+}
+
+h3.small,
+h3.small-ord {
+  font-size: 1.09rem;
+  /*por problema de verificación html*/
+}
+
+h3.small-ord {
+  text-align: center;
+  /*por problema de verificación html*/
+}
+
+
+/*PARTE PARA EL FORMS*/
+fieldset {
+  border: 1px solid #f0c8d0;
+  border-radius: 0.625rem;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  background-color: #fff0f3;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+fieldset:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 28px #702d4226;
+}
+
+legend {
+  font-style: italic;
+  font-size: 1.09rem;
+  color: #7b2d42;
+  padding: 0 0.5rem;
+}
+
+label {
+  display: block;
+  /*para que el input no salga en la misma línea que el label*/
+  font-size: 0.84rem;
+  color: #7b2d42;
+  margin-bottom: 0.3rem;
+}
+
+/*Para no estar escribiendo reglas para cada area de texto de ellos, los agrupé y le da uniformidad al formulario*/
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="date"],
+input[type="file"],
+select,
+textarea {
+  width: 100%;
+  padding: 0.6rem 0.91rem;
+  font-family: Georgia, serif;
+  font-size: 0.94rem;
+  color: #4a2c35;
+  background-color: white;
+  border: 1px solid #f0c8d0;
+  border-radius: 0.375rem;
+  outline: none;
+  margin-bottom: 1rem;
+  box-sizing: border-box;
+}
+
+/*para que en el borde se note que estas activando para escribir*/
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: #b05070;
+}
+
+textarea {
+  resize: vertical;
+  /*vas llenando en description siga el texto hacia abajo*/
+  min-height: 6.88rem;
+}
+
+/*color acento para los checkmarks*/
+input[type="checkbox"] {
+  margin-right: 0.5rem;
+  accent-color: #b05070;
+}
+
+/*darle dinamismo al botón de submit el formulario*/
+input[type="submit"] {
+  background-color: #b05070;
+  color: white;
+  font-family: Georgia, serif;
+  font-size: 0.84rem;
+  letter-spacing: 0.125rem;
+  text-transform: uppercase;
+  padding: 0.688rem 2rem;
+  border: none;
+  border-radius: 0.375rem;
+  cursor: pointer;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+input[type="submit"]:hover {
+  transform: translateY(-6px);
+  background-color: #7b2d42;
+}
+
+/*lo mismo pero para reset*/
+input[type="reset"] {
+  background-color: transparent;
+  color: #b08090;
+  font-family: Georgia, serif;
+  font-size: 0.84rem;
+  padding: 0.688rem 1.5rem;
+  border: 1px solid #f0c8d0;
+  border-radius: 0.375rem;
+  cursor: pointer;
+  margin-left: 0.5rem;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+input[type="reset"]:hover {
+  transform: translateY(-6px);
+  background-color: #fff0f3;
+  color: #7b2d42;
+}
+
+/*FOOTER*/
+
+footer {
+  text-align: center;
+  padding: 2rem 0;
+  border-top: 1px solid #f0c8d0;
+  margin-top: 2rem;
+  font-size: 0.78rem;
+  letter-spacing: 0.094rem;
+  text-transform: uppercase;
+  color: #b08090;
+}
+
+#petal-canvas {
+  position: fixed;
+  /*Para se quede en su lugar aunque escrollee*/
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /*Para que cubra toda la pantalla*/
+  pointer-events: none;
+  /*Para que los clicks pasen a través del canvas sin ser bloqueados (osea que se pueda interactuar con botones, links, etc...)*/
+  z-index: 0;
+  /*Para que esté detrás del contenido de la página y los pétalos aparezcan de fondo.*/
+}
+
+/*Botón de subir al inicio de la página (resto en javascript) */
+#upbtn {
+  position: fixed;
+  /*se queda fijo aunque escrolee*/
+  bottom: 2rem;
+  right: 7.5rem;
+  z-index: 1000;
+  /*botón está encima de todo el contenido de la página (número alto para que nada lo tape)*/
+  display: none;
+  /*botón comienza invisible y sin ocupar espacio*/
+  padding: 0.6rem 0.9rem;
+  font-size: 1.3rem;
+  background: #c47a9c;
+  /*color botón*/
+  color: #fff;
+  /*color flecha*/
+  border: none;
+  /*elimina bordes que vienen default*/
+  border-radius: 50%;
+  /*redondo*/
+  cursor: pointer;
+  box-shadow: 0 4px 12px #0a0a0a00;
+  transition: opacity 0.3s, transform 0.3s;
+  opacity: 0;
+  /*comienza transparente*/
+}
+
+/*Overlay fullscreen para imágenes (resto en javascript)*/
+#fullscreen {
+  display: none;
+  /*oculto*/
+  position: fixed;
+  /*fijo en pantalla*/
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  /*cubre la ventana de esquina a esquina*/
+  background: #000000d9;
+  /*va a oscurecer la página detras de la imágen*/
+  z-index: 2000;
+  /*número más alto que cualquier otro elemento de la página*/
+  align-items: center;
+  /*va a centrar la imágen en eje vertical (propiedad de flex)*/
+  justify-content: center;
+  /*va a centrar la imágen en eje horizontal (propiedad de flex)*/
+  cursor: zoom-out;
+  /*cambia cursor a lupa con "-"*/
+  padding: 1rem;
+}
+
+/*vw = viewport width y vh = viewport height*/
+#fullimg {
+  max-width: 90vw;
+  max-height: 90vh;
+  /*La imagen nunca va a poder ser más grande que el 90% del alto o ancho de la ventana (siempre imágen va a acaber en pantalla con espacio alrededor)*/
+  border-radius: 8px;
+  box-shadow: 0 8px 40px #00000099;
+  object-fit: contain;
+  /*para que imágen mantenga sus proporciones originales sin estirar o recortar*/
+  cursor: default;
+  /*cursor vuelve a normal cuando está encima de la imágen*/
+}
+
+/*Dos clases con estado inicial invisible, la posición de cada caja antes de animarse y el estado final cuando se añade la clase .visible
+.visible se añade y remueve en javascript según la posición de la caja en el viewport
+(resto en javascript)*/
+.reveal-left,
+.reveal-right {
+  opacity: 0;
+  transition: opacity 0.8s ease,
+    transform 0.8s ease;
+}
+
+.reveal-left {
+  transform: translateX(-120px);
+}
+
+.reveal-right {
+  transform: translateX(120px);
+}
+
+.reveal-left.visible,
+.reveal-right.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+
+/*Botón "Visitar Tienda" Animado (resto en javascsript) */
+
+/*@keyframes indica cómo cambia el elemento (pulse) en distintos puntos de la animación (en este caso 1)
+  50% (punto medio) un poco más grande con sombra de color más oscuro*/
+@keyframes pulse {
+  50% {
+    transform: scale(1.07);
+    box-shadow: 0 0 18px 8px #b4508c33;
+  }
+}
+
+
+/*pausa la animación cuando te paras encima del botón
+animation aplica pulse infinitamente cada 2 segundos*/
+#visitar-btn {
+  margin-top: 1.2rem;
+  padding: 0.75rem 2rem;
+  background: linear-gradient(135deg, #c47a9c, #a0527a);
+  color: #fff;
+  font-size: 1.05rem;
+  font-weight: bold;
+  letter-spacing: 0.063rem;
+  text-decoration: none;
+  border-radius: 50px;
+  border: none;
+  cursor: pointer;
+  animation: pulse 2s ease-in-out infinite;
+  transition: background 0.3s;
+  width: fit-content;
+}
+
+#visitar-btn:hover {
+  background: linear-gradient(135deg, #a0527a, #7a3060);
+  animation-play-state: paused;
+}
+
+/*flex permite que margin-top funcione y para acomodar el botón (no quede desalineado con el gif); direction tiene que estar en column para que el botón aparezca debajo del gif*/
+.coleccion {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/*MEDIA RESPONSIVENESS*/
+
+@media (max-width: 835px) {
+
+  /*esconder los strips en pantallas pequeñas*/
+  body::before,
+  body::after {
+    display: none;
+  }
+
+  body {
+    padding: 0 1rem; /*menos padding en móvil*/
+  }
+
+  header {
+    padding: 1.5rem 0 1rem;
+  }
+
+  header img {
+    width: 5rem; /*logo más pequeño*/
+    margin-bottom: -1.5rem;
+  }
+
+  h1 {
+    font-size: 1.8rem; /*título más pequeño*/
+  }
+
+  h2.smaller {
+    font-size: 1rem;
+  }
+
+  nav {
+    display: flex;
+    flex-wrap: wrap; /*links se envuelven (ej. contactos pasa hacia abajo de los demás)*/
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.75rem 0;
+  }
+
+  nav a {
+    margin: 0 0.5rem;
+    font-size: 0.75rem;
+  }
+
+  section.box {
+    padding: 1.25rem;
+    border-radius: 1.5rem;
+  }
+
+  .redes_layout {
+    flex-direction: column; 
+    gap: 1.5rem;
+  }
+
+  .redes_layout img {
+    width: 70%; /*más grande en móvil*/
+  }
+
+  section.coleccion img {
+    width: 85%; /*más grande en móvil*/
+  }
+
+  img.prod_titl {
+    width: 70%;
+  }
+
+  /*desactiva animación de cajas en móvil*/
+  .reveal-left,
+  .reveal-right {
+    opacity: 1;
+    transform: translateX(0);
+    transition: none;
+  }
+
+  /*ajuste fullscreen y fullimg en móvil*/
+  #fullscreen {
+    padding: 0.5rem;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #fullimg {
+    max-width: 98vw;
+    max-height: 85vh;
+    margin: auto;
+  }
+
+  /*remuevo de pétalos en móvil*/
+  #petal-canvas {
+    display: none;
+  }
+
+  input[type="reset"] {
+    margin-left: 0; /* elimina el margen izquierdo*/
+    margin-top: 0.75rem;
+  }
+
+  input[type="submit"], input[type="reset"] {
+    display: block; /*cada botón en su propia línea*/
+    width: 100%; /*ocupan todo el ancho disponible*/
+  }
+}
+
+@media (max-width: 480px) {
+
+  h1 {
+    font-size: 1.4rem;
+  }
+
+  h2 {
+    font-size: 1.4rem;
+  }
+
+  nav a {
+    font-size: 0.65rem;
+    margin: 0 0.25rem;
+  }
+
+  #upbtn {
+    right: 1rem; /*reposiciona botón en móvil*/
+    bottom: 1rem;
+  }
+}
